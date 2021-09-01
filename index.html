@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <style>
+          @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Orbitron&family=Poppins&family=Raleway&family=Roboto&display=swap');
+          *{
+               overflow: hidden;
+               text-decoration: none;
+               font-weight: bold;font-family: 'Montserrat', 'Poppins','Raleway','Lato','Open Sans', 'Roboto', Arial, Helvetica, sans-serif;
+          }
+
+          a{
+               color: dodgerblue;
+          }
+
+          footer{
+               position: absolute;
+               bottom: 0;
+          }
+
+          body{
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               height: 100vh;
+               width: 100vw;
+               gap:1rem;
+          }
+
+          img{
+               width: 10rem;
+          }
+
+          button, input, select{
+     font-size: 1rem;
+    border-radius: 5px;
+    margin-left: 4px;
+    cursor: pointer;
+
+}
+
+button, input{
+     padding: 0.5rem 1rem;
+}
+
+
+select{
+     padding: 0.5rem 2rem;
+}
+
+input:focus{
+  outline: none;
+}
+
+
+button{
+     color: white;
+     border: none;
+     background-color: #4285F4;
+}
+
+button:hover{
+     background-color: #3169c3;
+}
+
+
+button:active{
+     background-color: #285399;
+}
+     </style>
+          <h1>Dicebear avatar demo</h1>
+          <img src="https://avatars.dicebear.com/api/male/abhi.svg?&mood=happy">
+     <input type="text" placeholder="abhi" value="abhi">
+     <select class="type">
+          <option>
+               male
+          </option>
+          <option>
+               female
+          </option>
+          <option>
+               human
+          </option>
+          <option>
+               identicon
+          </option>
+          <option>
+               initials
+          </option>
+          <option>
+               bottts
+          </option>
+          <option>
+               avataaars
+          </option>
+          <option>
+               jdenticon
+          </option>
+          <option>
+               gridy
+          </option>
+          <option>
+               micah
+          </option>
+     </select>
+     <select class="feelings">
+          <option>happy</option>
+          <option>sad</option>
+     </select>
+     <button>
+         generate avatar 
+     </button>
+     <footer>
+          <div style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap:.7rem;
+          ">
+               <a href="https://avatars.dicebear.com">dicebear avatars</a>
+          <p>demo made by <a href="https://github.com/TalkativeDiv">TalkativeDiv</a></p>
+          </div>
+     </footer>
+     <script>
+          const img = document.querySelector('img')
+          const input = document.querySelector('input')
+          const button = document.querySelector('button')
+          const type = document.querySelector('.type')
+          const feelings = document.querySelector('.feelings')
+          button.onclick = () => img.src = `https://avatars.dicebear.com/api/${type.value}/${input.value}.svg?&mood=${feelings.value}`
+
+          input.oninput = () =>  img.src = `https://avatars.dicebear.com/api/${type.value}/${input.value}.svg?&mood=${feelings.value}`
+
+          type.onchange = () => img.src = `https://avatars.dicebear.com/api/${type.value}/${input.value}.svg?&mood=${feelings.value}`
+
+          feelings.onchange = () => img.src = `https://avatars.dicebear.com/api/${type.value}/${input.value}.svg?&mood=${feelings.value}`
+   </script>
+</body>
+</html>
